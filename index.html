@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="screen1" class="card active" style="max-width: 650px; width: 95%;">
+        <div class="split-screen">
+            
+            <div class="left-side">
+                <img src="images/sw.png" alt="Snoopy with flowers">
+            </div>
+            
+            <div class="right-side">
+                <h2>Enter Passcode ❤️</h2>
+                
+                <div class="pin-display" id="pin-view">
+                    <div class="pin-box" id="box0"></div>
+                    <div class="pin-box" id="box1"></div>
+                    <div class="pin-box" id="box2"></div>
+                    <div class="pin-box" id="box3"></div>
+                </div>
+                
+                <div class="keypad">
+                    <button class="key" onclick="pressKey('1')">1</button>
+                    <button class="key" onclick="pressKey('2')">2</button>
+                    <button class="key" onclick="pressKey('3')">3</button>
+                    <button class="key" onclick="pressKey('4')">4</button>
+                    <button class="key" onclick="pressKey('5')">5</button>
+                    <button class="key" onclick="pressKey('6')">6</button>
+                    <button class="key" onclick="pressKey('7')">7</button>
+                    <button class="key" onclick="pressKey('8')">8</button>
+                    <button class="key" onclick="pressKey('9')">9</button>
+                    <button class="key" onclick="clearPin()">C</button>
+                    <button class="key" onclick="pressKey('0')">0</button>
+                    <button class="key" onclick="checkPin()">➔</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="screen2" class="card">
+        
+        <div id="cake-phase-a">
+            <h2>HAPPY BIRTHDAY! 🎉</h2>
+            <img src="images/cake.png" alt="Snoopy Birthday" style="width: 150px; height: auto; margin-bottom: 15px;">
+            <br>
+            <button onclick="showBlowPhase()">Next</button>
+        </div>
+
+        <div id="cake-phase-b" style="display: none;">
+            <h2 id="birthday-title">Make a wish</h2>
+            
+            <img src="images/glow.jpeg" alt="Birthday Cake" class="birthday-cake" id="cake-img">
+            
+            <p id="instruction-text">and blow out the candles!</p>
+            
+            <button id="action-btn" onclick="blowCandles()">BLOW 💨</button>
+
+            <button id="post-blow-next" style="display: none;" onclick="goToGifts()">Next ➔</button>
+        </div>
+
+    </div>
+
+    <div id="screen3" class="card" style="max-width: 650px; width: 95%; position: relative; padding-top: 50px; overflow: hidden;">
+        
+        <img src="images/flower1.jpg" alt="Snoopy Flower" class="bg-snoopy corner-left">
+        
+        <img src="images/flower3.jpg" alt="Snoopy Heart" class="bg-snoopy corner-right">
+
+        <h2>These are for you! ✨</h2>
+        <p class="sub-title">Choose one to open:</p>
+        
+        <div class="gift-container">
+            <div class="gift-box" onclick="openGift('camera')">
+                <img src="images/camera.webp" alt="Camera">
+            </div>
+            <div class="gift-box" onclick="openGift('bottle')">
+                <img src="images/bottle.jpg" alt="Message in a Bottle">
+            </div>
+            <div class="gift-box" onclick="openGift('star')">
+                <img src="images/star.jpg" alt="Star">
+            </div>
+        </div>
+
+        <div id="gift-reveal-area" style="display: none;">
+            <div id="gift-content"></div>
+            <br>
+            <button id="gifts-screen-next" onclick="nextScreen('screen3', 'screen4')">Next ➔</button>
+        </div>
+    </div>
+
+    <div id="screen4" class="card">
+        <h2>To My Favorite Person ❤️</h2>
+        <p style="text-align: left; background: #fff5f7; padding: 15px; border-radius: 10px; font-size: 0.95rem;">
+           <!-- Happy birthday, babe! I know I always say this, but I really do miss you. 
+            Thank you for being such an amazing partner and for always supporting me, no matter the distance. 🌹 -->
+        </p>
+        
+        <div style="margin-top: 15px;">
+            <video width="100%" height="200" controls autoplay muted playsinline preload="metadata">
+                <source src="music/mywish.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
